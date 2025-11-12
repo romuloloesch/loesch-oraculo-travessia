@@ -3,158 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Travessia — A Obra → O Silêncio (v1.3)</title>
-  <meta name="description" content="A Obra é o lugar da entrega. O Silêncio é o lugar da escuta. Ciclo ritual em HTML puro, sem dependências externas."/>
-  <style>
-    :root{
-      --bg: #0f0f10;
-      --paper: #111214;
-      --ink: #e7e2d9;
-      --muted: #bfb9ad;
-      --gold: #c9a646;
-      --gold-weak: #c9a64622;
-      --seal: #e7e2d9;
-    }
-    html,body{height:100%; background:var(--bg); color:var(--ink);}
-    *{box-sizing:border-box;}
-    body{margin:0; font: 400 16px/1.6 ui-serif, Georgia, "Times New Roman", Times, serif; letter-spacing: 0.15px;}
-    .page{ display:none; min-height:100dvh; }
-    .page.active{ display:flex; }
-    .wrap{ max-width: 980px; width: 100%; margin: 0 auto; padding: 6vh 22px; display:flex; flex-direction:column; gap: 28px;}
-    header{ display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .brand{ display:flex; align-items:center; gap:12px; color:var(--muted); font-size:14px; letter-spacing:1px; text-transform:uppercase; }
-    .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 6px var(--gold-weak);}
-    h1{ font: 500 28px/1.2 ui-serif, Georgia, serif; color:var(--ink); margin:0;}
-    p.lead{ color:var(--muted); margin:0; font-size:15px;}
-    .paper{
-      background: var(--paper);
-      border-radius: 18px;
-      padding: 28px 28px 22px 28px;
-      box-shadow: 0 0 0 1px #ffffff0f inset, 0 20px 60px #0007;
-    }
-    textarea#obra-texto{
-      width: 100%;
-      min-height: 44vh;
-      resize: vertical;
-      border: none; outline: none;
-      background: transparent;
-      color: var(--ink);
-      font: 400 18px/1.7 ui-serif, Georgia, serif;
-      caret-color: var(--gold);
-    }
-    textarea::placeholder{ color:#d7d1c799; }
-    .bar{ display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:14px; }
-    .hint{ color:var(--muted); font-size:13px; }
-    .gold {
-      background: linear-gradient(180deg, #d8b75a, #b9932e);
-      color:#1b1408; border: none; border-radius: 999px; padding:10px 14px;
-      font: 600 13px/1 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      letter-spacing: .3px; cursor:pointer; box-shadow: 0 2px 0 #0008, 0 0 0 6px #b9932e22 inset;
-      transition: transform .06s ease, filter .2s ease;
-    }
-    .gold:active{ transform: translateY(1px); }
-    .gold[disabled]{ opacity:.6; cursor:wait; }
-    .silencio{ position:relative; width:100%; min-height:100dvh; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-    .seal {
-      width: 148px; height: 148px; border-radius: 999px; border: 1px solid #ffffff26;
-      display:grid; place-items:center; position:relative;
-      box-shadow: 0 0 0 1px #ffffff14 inset, 0 0 100px #000;
-      animation: breathe 6s ease-in-out infinite;
-    }
-    .seal::before{
-      content: "∞"; font: 400 68px/1 ui-serif, Georgia, serif; color: var(--seal);
-      transform: rotate(90deg) translateY(2px);
-      opacity:.9;
-    }
-    @keyframes breathe{
-      0%   { transform: scale(1); box-shadow: 0 0 0 0 #c9a64600, 0 0 100px #000; }
-      50%  { transform: scale(1.035); box-shadow: 0 0 36px 0 #c9a64629, 0 0 120px #000; }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 #c9a64600, 0 0 100px #000; }
-    }
-    .veil{ position:fixed; inset:0; pointer-events:none; background: radial-gradient(1200px 1200px at 50% 50%, #0000 0%, #000 70%); opacity:0; transition: opacity 10s ease; }
-    .veil.on{ opacity:.92; }
-    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-    @media (max-width: 640px){
-      h1{ font-size:22px; }
-      .wrap{ padding-top: 4vh; }
-      textarea#obra-texto{ min-height: 48vh; font-size:17px; }
-      .seal{ width:128px; height:128px; }
-    }
-  </style>
+  <title>Travessia — Início</title>
+  <meta name="description" content="Travessia: A Obra (entrega) e O Silêncio (escuta)."/>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script defer src="assets/config.js"></script>
 </head>
-<body>
-  <main id="page-obra" class="page active" aria-labelledby="obra-title">
-    <div class="wrap">
-      <header>
-        <div class="brand"><span class="dot" aria-hidden="true"></span><span>travessia</span></div>
-      </header>
-      <section class="paper" aria-label="A Obra — o lugar da entrega">
-        <h1 id="obra-title">A Obra</h1>
-        <p class="lead">Aqui você fala — com suas palavras.</p>
-        <textarea id="obra-texto" placeholder="Conte-me, com suas palavras..." aria-label="Campo livre para escrever a sua entrega"></textarea>
-        <div class="bar">
-          <span class="hint">Ctrl+Enter envia • sem formulários, sem ruído</span>
-          <button id="btn-entrego" class="gold">Entrego em confiança.</button>
+<body class="page">
+  <div class="wrap">
+    <header class="brand"><span class="dot" aria-hidden="true"></span><span>travessia</span></header>
+    <div class="grid">
+      <section class="card">
+        <h1>A Travessia</h1>
+        <p class="lead">A Obra é o lugar da entrega. O Silêncio é o lugar da escuta. Aqui, o gesto é ritual, sem ruído.</p>
+        <div class="cta">
+          <a class="btn" href="obra.html">Ir para A Obra</a>
+          <a class="btn" href="silencio.html">Visitar O Silêncio</a>
         </div>
       </section>
+      <section class="card">
+        <h2>Como funciona</h2>
+        <p>Você escreve livremente e clica em <em>Entrego em confiança.</em> Abrimos seu app de e-mail com a mensagem — e então conduzimos ao Silêncio. Sem “sucesso”, sem “obrigado”: apenas presença.</p>
+      </section>
     </div>
-  </main>
-
-  <main id="page-silencio" class="page" aria-labelledby="silencio-title">
-    <h2 id="silencio-title" class="sr-only">O Silêncio</h2>
-    <section class="silencio" aria-label="O Silêncio — o lugar da escuta">
-      <div class="seal" role="img" aria-label="Selo respirando — travessia acolhida"></div>
-    </section>
-    <div class="veil" id="veil" aria-hidden="true"></div>
-  </main>
-
-  <script>
-    const EMAIL_TO = "contato@loescheoraculo.com";
-    const EMAIL_SUBJECT = encodeURIComponent("Travessia — A Obra");
-    const pageObra = document.getElementById('page-obra');
-    const pageSilencio = document.getElementById('page-silencio');
-    const textarea = document.getElementById('obra-texto');
-    const btn = document.getElementById('btn-entrego');
-    const veil = document.getElementById('veil');
-
-    window.addEventListener('load', () => textarea && textarea.focus({preventScroll:true}));
-
-    function entregar(){
-      if(btn.disabled) return;
-      btn.disabled = true;
-
-      const body = encodeURIComponent(textarea.value || "(entrego em confiança)");
-      const mailto = `mailto:${EMAIL_TO}?subject=${EMAIL_SUBJECT}&body=${body}`;
-
-      const a = document.createElement('a');
-      a.href = mailto;
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-
-      pageObra.classList.remove('active');
-      pageSilencio.classList.add('active');
-      setTimeout(() => veil.classList.add('on'), 4200);
-    }
-
-    btn.addEventListener('click', entregar);
-
-    textarea.addEventListener('keydown', (e) => {
-      if((e.ctrlKey || e.metaKey) && e.key === 'Enter'){
-        e.preventDefault();
-        entregar();
-      }
-    });
-
-    try {
-      const params = new URLSearchParams(location.search);
-      if(params.get('auto') === 'silencio'){
-        pageObra.classList.remove('active');
-        pageSilencio.classList.add('active');
-        setTimeout(() => veil.classList.add('on'), 1500);
-      }
-    } catch(_){}
-  </script>
+    <footer class="small">© Loesch & Oráculo — 2025</footer>
+  </div>
 </body>
 </html>

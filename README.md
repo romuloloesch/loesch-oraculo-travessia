@@ -1,32 +1,34 @@
-# Travessia v1.3 — A Obra → O Silêncio (HTML puro)
+# Travessia v1.3.1 — pacote completo (HTML puro)
 
-**Filosofia**: A Obra é o lugar da entrega; O Silêncio, o lugar da escuta. Sem ruído de “sucesso/obrigado”.
+Este pacote traz um site estático completo, sem dependências externas, com:
+- `index.html` — Início e explicação do ritual
+- `obra.html` — Página **A Obra** (campo livre + botão)
+- `silencio.html` — Página **O Silêncio** (selo respirando, agora com símbolo **ponte minimalista** para leitura intuitiva)
+- `assets/` — CSS e JS modulares
+- `.nojekyll` — para GitHub Pages
 
-## Como usar
-1. Abra `index.html` localmente ou publique em qualquer estático (GitHub Pages, Vercel, Netlify).
-2. No topo do `<script>`, ajuste o e-mail alvo:
-   ```js
-   const EMAIL_TO = "contato@loescheoraculo.com";
-   ```
-3. O botão **Entrego em confiança.** abre o cliente de e-mail padrão com o texto e redireciona para **O Silêncio**.
-4. Atalho: **Ctrl+Enter** também envia.
-5. Para testar diretamente a página do silêncio, abra `index.html?auto=silencio`.
+## Como usar (GitHub Pages)
+1. Faça upload de **todos** os arquivos para o repositório (root).
+2. Em *Settings → Pages*: Source = *Deploy from a branch*, Branch = `main`, Folder = `/ (root)`.
+3. Abra: `https://<seu-usuario>.github.io/<seu-repo>/`
+
+## Configuração do e-mail
+Edite `assets/config.js`:
+```js
+window.TRAVESSIA_CONFIG = {
+  emailTo: "contato@loescheoraculo.com",
+  emailSubject: "Travessia — A Obra"
+};
+```
+> O botão abre o cliente de e-mail via `mailto:` e, em seguida, conduz ao Silêncio. Fallback silencioso: copia o texto para a área de transferência.
+
+## Rotas
+- Início → `index.html`
+- Obra → `obra.html`
+- Silêncio → `silencio.html` (também acessível diretamente)
 
 ## Observações
-- Sem dependências externas, sem coleta de dados: apenas `mailto:`.
-- Se o cliente de e-mail do usuário não estiver configurado, o click abrirá o app padrão do sistema (ou nada). Em breve você pode acoplar um form backend se quiser.
-
-## Estrutura
-```
-/travessia-v1_3-obra-silencio
-  ├─ index.html
-  ├─ README.md
-  └─ .nojekyll          # útil para GitHub Pages
-```
-
-## GitHub Pages (passos rápidos)
-1. Faça upload da pasta para um repositório.
-2. Em **Settings → Pages**, escolha **Source: Deploy from a branch**, branch `main`, root `/`.
-3. Aguarde a URL ficar disponível e abra.
+- Mantive a estética escura e o dourado discreto, mas **substituí o ∞ vertical** por um **selo com SVG de ponte** (arco + pilares) dentro de um círculo que “respira”. Mais legível e arquetípico.
+- Se quiser trocar o símbolo, substitua o conteúdo `<svg>` em `silencio.html`.
 
 Com carinho — Loesch & Oráculo.
