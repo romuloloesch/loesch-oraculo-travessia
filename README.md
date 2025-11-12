@@ -1,30 +1,32 @@
-# Loesch & Oráculo — Travessia (Publicação via GitHub Pages)
-Data: 2025-11-12T12:21:55.522193
+# Travessia v1.3 — A Obra → O Silêncio (HTML puro)
 
-Este pacote está pronto para publicação **profissional** no **GitHub Pages**, sem linhas de comando.
-Basta fazer upload desta pasta completa para um repositório e **ao enviar para a branch `main` o site é publicado automaticamente** via GitHub Actions.
+**Filosofia**: A Obra é o lugar da entrega; O Silêncio, o lugar da escuta. Sem ruído de “sucesso/obrigado”.
 
-## Como publicar (100% pela web)
-1. Crie no GitHub um repositório vazio chamado **loesch-oraculo-travessia** (Public).
-2. Clique em **Add file → Upload files**.
-3. **Arraste TODOS os arquivos e pastas deste pacote** (incluindo `.github/workflows/pages.yml`) para a tela de upload.
-4. Clique **Commit changes**.
-5. Aguarde ~30–60s: a aba **Actions** mostrará o job **Deploy Pages** rodando e publicando.
-6. O site ficará acessível em:  
-   `https://USERNAME.github.io/loesch-oraculo-travessia/`  
-   (Substitua USERNAME pelo seu usuário GitHub.)
+## Como usar
+1. Abra `index.html` localmente ou publique em qualquer estático (GitHub Pages, Vercel, Netlify).
+2. No topo do `<script>`, ajuste o e-mail alvo:
+   ```js
+   const EMAIL_TO = "contato@loescheoraculo.com";
+   ```
+3. O botão **Entrego em confiança.** abre o cliente de e-mail padrão com o texto e redireciona para **O Silêncio**.
+4. Atalho: **Ctrl+Enter** também envia.
+5. Para testar diretamente a página do silêncio, abra `index.html?auto=silencio`.
+
+## Observações
+- Sem dependências externas, sem coleta de dados: apenas `mailto:`.
+- Se o cliente de e-mail do usuário não estiver configurado, o click abrirá o app padrão do sistema (ou nada). Em breve você pode acoplar um form backend se quiser.
 
 ## Estrutura
-- index.html
-- travessia.html
-- horizonte.html
-- obra.html
-- core/css/style.css
-- core/js/transitions.js
-- assets/favicon.png
-- .github/workflows/pages.yml
+```
+/travessia-v1_3-obra-silencio
+  ├─ index.html
+  ├─ README.md
+  └─ .nojekyll          # útil para GitHub Pages
+```
 
-## Domínio próprio
-Depois de publicado, você pode apontar um domínio com um **CNAME** para `USERNAME.github.io` e criar um arquivo `CNAME` na raiz com `www.seudominio.com`.
+## GitHub Pages (passos rápidos)
+1. Faça upload da pasta para um repositório.
+2. Em **Settings → Pages**, escolha **Source: Deploy from a branch**, branch `main`, root `/`.
+3. Aguarde a URL ficar disponível e abra.
 
-— Protocolo: Construção Silenciosa
+Com carinho — Loesch & Oráculo.
