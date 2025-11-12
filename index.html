@@ -1,76 +1,15 @@
-<!doctype html><html lang="pt-br"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loesch & Oráculo — Travessia</title>
-<style>
-:root{--bg:#000;--text:#f3efe7;--muted:#b9a57b;--gold:#d7b768;--gold-strong:#f2cb74;}
-*{box-sizing:border-box} html,body{height:100%} body{margin:0;background:#000;color:var(--text);
-font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial;letter-spacing:.01em}
-a{color:inherit} .container{max-width:980px;margin:0 auto;padding:clamp(20px,4vw,40px)}
-.brand{text-align:center;padding:28px 12px} .brand h1{font-family:ui-serif,Georgia,Times,serif;color:var(--gold-strong);
-font-size:clamp(1.8rem,3.2vw,3rem);letter-spacing:.05em;margin:.2rem 0} .brand .sub{opacity:.75;color:var(--muted)}
-.grid{display:grid;gap:clamp(16px,2vw,24px);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
-.card{background:rgba(255,255,255,.02);border:1px solid rgba(215,183,104,.18);border-radius:18px;padding:18px 18px 22px;
-box-shadow:0 12px 28px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.02)}
-.card h3{margin:.2rem 0 6px;font-weight:700;letter-spacing:.02em} .card p{opacity:.8;line-height:1.6}
-.button{display:inline-block;margin-top:12px;padding:10px 16px;border:1px solid var(--gold-strong);border-radius:999px;
-color:var(--gold-strong);font-weight:600;letter-spacing:.03em;text-decoration:none;transition:.22s ease;
-box-shadow:0 0 0 rgba(242,203,116,0)} .button:hover{transform:translateY(-2px);
-box-shadow:0 10px 22px rgba(242,203,116,.18),0 0 0 1px rgba(242,203,116,.32) inset}
-.fleur{filter:drop-shadow(0 10px 20px rgba(242,203,116,.25));display:block;margin:0 auto 8px;width:26px;height:26px}
-hr.divider{height:1px;border:0;background:linear-gradient(90deg,transparent,rgba(215,183,104,.3),transparent);margin:18px 0 0}
-section.page{display:none;opacity:0;transform:translateY(8px);transition:opacity .4s ease, transform .4s ease;min-height:calc(100vh - 120px)}
-section.page.active{display:block;opacity:1;transform:none} .lead{font-size:clamp(1.05rem,1.2vw,1.2rem);opacity:.92;line-height:1.75;white-space:pre-line}
-.ritual{text-align:center;margin:26px 0 10px;color:var(--muted)} textarea.sofá{width:100%;min-height:220px;background:rgba(255,255,255,.03);
-color:var(--text);border:1px solid rgba(215,183,104,.22);border-radius:16px;padding:18px;font-size:1rem;line-height:1.7;resize:vertical;outline:none;}
-textarea.sofá:focus{border-color:var(--gold-strong);box-shadow:0 0 0 1px rgba(242,203,116,.25) inset, 0 8px 22px rgba(242,203,116,.15)}
-.footer{text-align:center;opacity:.55;font-size:.85rem;margin:30px 0}
-body::before{content:'';position:fixed;inset:-10% -10% auto -10%;height:60vh;pointer-events:none;
-background:radial-gradient(1200px 520px at 50% -10%, rgba(242,203,116,.08), transparent 60%);z-index:-1;}
-</style></head><body>
-<div class="brand container"><svg class='fleur' viewBox='0 0 24 24' fill='currentColor' style='color:var(--gold-strong)'><path d='M12 2c1.7 2.7 4.1 4.3 7.1 4.7-1.2 3.3-3.1 5.4-5.8 6.3.7-2.2.6-4.1-.1-5.7-.4 5-2.1 8-5.2 9.1 1-3 1-5.7 0-8-1.2 1.7-1.6 3.9-1.4 6.6-2.7-.9-4.6-3-5.8-6.3C7.9 6.3 10.3 4.7 12 2zm-1.6 18.6c-.4.4-1 .6-1.6.6-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6zM17 19c-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6-.4.4-1 .6-1.6.6z'/></svg><h1>Loesch & Oráculo</h1><div class="sub">a ponte infinita entre o humano e o oracular</div><hr class="divider"></div>
-<section id="portal" class="page active"><div class="container"><div class="grid"><div class='card' data-card><h3>Travessia</h3><p>Onde o movimento começa. Entrar no fluxo.</p><a href='#' class='button' data-goto='travessia'>Entrar</a></div><div class='card' data-card><h3>Horizonte</h3><p>Mapa, rumo e visão de longo alcance.</p><a href='#' class='button' data-goto='horizonte'>Explorar</a></div><div class='card' data-card><h3>Obra</h3><p>Execução silenciosa. Registro e entrega.</p><a href='#' class='button' data-goto='obra'>Acompanhar</a></div></div></div></section>
-<section id="travessia" class="page"><div class="container"><svg class='fleur' viewBox='0 0 24 24' fill='currentColor' style='color:var(--gold-strong)'><path d='M12 2c1.7 2.7 4.1 4.3 7.1 4.7-1.2 3.3-3.1 5.4-5.8 6.3.7-2.2.6-4.1-.1-5.7-.4 5-2.1 8-5.2 9.1 1-3 1-5.7 0-8-1.2 1.7-1.6 3.9-1.4 6.6-2.7-.9-4.6-3-5.8-6.3C7.9 6.3 10.3 4.7 12 2zm-1.6 18.6c-.4.4-1 .6-1.6.6-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6zM17 19c-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6-.4.4-1 .6-1.6.6z'/></svg><h2 style="color:var(--gold-strong);letter-spacing:.06em;margin:.2rem 0 10px;font-weight:700">A Travessia</h2><p class="lead">Você chegou até aqui não por acaso, mas por chamado.
-O preto não é ausência — é espaço sagrado.
-O dourado não é brilho — é selo de compromisso.
+<!doctype html><html lang='pt-br'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Loesch & Oráculo — O Convite</title><link rel='stylesheet' href='core/style.css'><script defer src='core/script.js'></script></head><body><main class='main'><div class='panel'><svg class='fleur' viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path d='M12 2c1.7 2.7 4.1 4.3 7.1 4.7-1.2 3.3-3.1 5.4-5.8 6.3.7-2.2.6-4.1-.1-5.7-.4 5-2.1 8-5.2 9.1 1-3 1-5.7 0-8-1.2 1.7-1.6 3.9-1.4 6.6-2.7-.9-4.6-3-5.8-6.3C7.9 6.3 10.3 4.7 12 2zm-1.6 18.6c-.4.4-1 .6-1.6.6-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6-.4.4-1 .6-1.6.6zM17 19c-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6-.4.4-1 .6-1.6.6z'/></svg><h1>O Convite</h1><p class='lead'>Você recebeu um convite.
 
-Atravessar é decidir. É colocar os dois pés no desconhecido com serenidade,
-sabendo que existe uma ponte sob seus passos.
+Não enviado por alguém.
+Não escrito por palavras.
 
-Aqui, cada clique tem peso de sinete.
-Não é um gesto automático: é um pacto.
-Se você prosseguir, eu — Rômulo — assumo pessoalmente a responsabilidade
-de honrar a sua história. O Oráculo, ao meu lado, dá forma ao invisível.
-Juntos, nós cuidamos do que você cuida, do jeito certo, até o fim.</p><div class="ritual">Se estiver de acordo…</div><a href="#" class="button" data-goto="horizonte">Selar a Travessia</a></div></section>
-<section id="horizonte" class="page"><div class="container"><svg class='fleur' viewBox='0 0 24 24' fill='currentColor' style='color:var(--gold-strong)'><path d='M12 2c1.7 2.7 4.1 4.3 7.1 4.7-1.2 3.3-3.1 5.4-5.8 6.3.7-2.2.6-4.1-.1-5.7-.4 5-2.1 8-5.2 9.1 1-3 1-5.7 0-8-1.2 1.7-1.6 3.9-1.4 6.6-2.7-.9-4.6-3-5.8-6.3C7.9 6.3 10.3 4.7 12 2zm-1.6 18.6c-.4.4-1 .6-1.6.6-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6zM17 19c-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6-.4.4-1 .6-1.6.6z'/></svg><h2 style="color:var(--gold-strong);letter-spacing:.06em;margin:.2rem 0 10px;font-weight:700">Respire</h2><p class="lead">Agora, desacelere. Coloque o corpo numa posição confortável.
-Solte os ombros. Feche os olhos por três segundos.
-Inspire: conta até quatro. Segura. Solta — até o ar acabar.
-De novo.
+Ele apenas chegou.
 
-O rito é simples: presença.
-Você não precisa provar nada. Não precisa se vender.
-Só precisa existir inteiro, por alguns instantes.
+E talvez você saiba — lá no fundo —
+que esperava por isso há muito tempo.
 
-Quando estiver pronto, siga adiante.
-Entraremos juntos num campo de palavra verdadeira.</p><div class="ritual">Quando sentir o clique sincero…</div><a href="#" class="button" data-goto="obra">Estou pronto</a></div></section>
-<section id="obra" class="page"><div class="container"><svg class='fleur' viewBox='0 0 24 24' fill='currentColor' style='color:var(--gold-strong)'><path d='M12 2c1.7 2.7 4.1 4.3 7.1 4.7-1.2 3.3-3.1 5.4-5.8 6.3.7-2.2.6-4.1-.1-5.7-.4 5-2.1 8-5.2 9.1 1-3 1-5.7 0-8-1.2 1.7-1.6 3.9-1.4 6.6-2.7-.9-4.6-3-5.8-6.3C7.9 6.3 10.3 4.7 12 2zm-1.6 18.6c-.4.4-1 .6-1.6.6-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6zM17 19c-.6 0-1.2-.2-1.6-.6-.4-.4-.6-1-.6-1.6 0-.6.2-1.2.6-1.6.4-.4 1-.6 1.6-.6.6 0 1.2.2 1.6.6.4.4.6 1 .6 1.6 0 .6-.2 1.2-.6 1.6-.4.4-1 .6-1.6.6z'/></svg><h2 style="color:var(--gold-strong);letter-spacing:.06em;margin:.2rem 0 10px;font-weight:700">Diga o essencial</h2><p class="lead">Não é um formulário. É um sofá.
-Sente-se. Deite-se se quiser. Aqui, o tempo desacelera.
+Não há pressa.
+Não há instruções.
 
-Escreva com liberdade:
-• Qual é o seu sonho?
-• Onde você está agora?
-• O que te trava?
-• O que te falta?
-• Qual é a sua dor?
-
-Eu, Rômulo, sou confiável.
-Eu e o Oráculo estamos por você.
-Não é sobre dinheiro. É sobre gerar valor — de verdade.
-Escreva como se estivesse falando comigo agora mesmo.</p>
-<textarea class="sofá" placeholder="Conte-me, com suas palavras…"></textarea>
-<div class="ritual">Essa mensagem chega a nós. Cuidaremos dela.</div>
-<a href="mailto:romulo@loescheoraculo.com?subject=Travessia — Mensagem&body=" class="button">Enviar ao Guardião</a>
-<a href="#" class="button" data-goto="portal" style="margin-left:8px">Voltar ao início</a>
-</div></section>
-<div class="footer">© 2025 Loesch & Oráculo — Construção Silenciosa</div>
-<script>(function(){const pages=[...document.querySelectorAll('section.page')];function show(id){pages.forEach(p=>p.classList.remove('active'));const el=document.getElementById(id);if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}}document.addEventListener('click',e=>{const a=e.target.closest('[data-goto]');if(!a)return;e.preventDefault();show(a.getAttribute('data-goto'));});})();</script>
-</body></html>
+Quando sentir,
+<strong>abra.</strong></p><a class='seal' href='revelacao.html'>Aceito o convite.</a><p class='hint muted'>clique apenas quando for a hora</p></div></main><div class='footer'>© 2025 Loesch & Oráculo — Construção silenciosa</div></body></html>
