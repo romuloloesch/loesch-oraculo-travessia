@@ -1,34 +1,38 @@
-# Travessia v1.3.1 — pacote completo (HTML puro)
+# Loesch & Oráculo — Travessia (Publicação via GitHub Pages)
+Data: 2025-11-12T12:21:55.522193
 
-Este pacote traz um site estático completo, sem dependências externas, com:
-- `index.html` — Início e explicação do ritual
-- `obra.html` — Página **A Obra** (campo livre + botão)
-- `silencio.html` — Página **O Silêncio** (selo respirando, agora com símbolo **ponte minimalista** para leitura intuitiva)
-- `assets/` — CSS e JS modulares
-- `.nojekyll` — para GitHub Pages
+Este pacote está pronto para publicação **profissional** no **GitHub Pages**, sem linhas de comando.
+Basta fazer upload desta pasta completa para um repositório e **ao enviar para a branch `main` o site é publicado automaticamente** via GitHub Actions.
 
-## Como usar (GitHub Pages)
-1. Faça upload de **todos** os arquivos para o repositório (root).
-2. Em *Settings → Pages*: Source = *Deploy from a branch*, Branch = `main`, Folder = `/ (root)`.
-3. Abra: `https://<seu-usuario>.github.io/<seu-repo>/`
+## Como publicar (100% pela web)
+1. Crie no GitHub um repositório vazio chamado **loesch-oraculo-travessia** (Public).
+2. Clique em **Add file → Upload files**.
+3. **Arraste TODOS os arquivos e pastas deste pacote** (incluindo `.github/workflows/pages.yml`) para a tela de upload.
+4. Clique **Commit changes**.
+5. Aguarde ~30–60s: a aba **Actions** mostrará o job **Deploy Pages** rodando e publicando.
+6. O site ficará acessível em:  
+   `https://USERNAME.github.io/loesch-oraculo-travessia/`  
+   (Substitua USERNAME pelo seu usuário GitHub.)
 
-## Configuração do e-mail
-Edite `assets/config.js`:
-```js
-window.TRAVESSIA_CONFIG = {
-  emailTo: "contato@loescheoraculo.com",
-  emailSubject: "Travessia — A Obra"
-};
-```
-> O botão abre o cliente de e-mail via `mailto:` e, em seguida, conduz ao Silêncio. Fallback silencioso: copia o texto para a área de transferência.
+## Estrutura
+- index.html
+- travessia.html
+- horizonte.html
+- obra.html
+- core/css/style.css
+- core/js/transitions.js
+- assets/favicon.png
+- .github/workflows/pages.yml
 
-## Rotas
-- Início → `index.html`
-- Obra → `obra.html`
-- Silêncio → `silencio.html` (também acessível diretamente)
+## Domínio próprio
+Depois de publicado, você pode apontar um domínio com um **CNAME** para `USERNAME.github.io` e criar um arquivo `CNAME` na raiz com `www.seudominio.com`.
 
-## Observações
-- Mantive a estética escura e o dourado discreto, mas **substituí o ∞ vertical** por um **selo com SVG de ponte** (arco + pilares) dentro de um círculo que “respira”. Mais legível e arquetípico.
-- Se quiser trocar o símbolo, substitua o conteúdo `<svg>` em `silencio.html`.
+— Protocolo: Construção Silenciosa
 
-Com carinho — Loesch & Oráculo.
+---
+
+### Notas desta restauração (v1.1 + Obra/Silêncio)
+- `obra.html` — campo livre, placeholder *“Conte-me, com suas palavras…”* e botão **“Entrego em confiança.”** (Ctrl+Enter).
+- Abre o app de e-mail via `mailto` e redireciona automaticamente ao `silencio.html`.
+- `silencio.html` — selo respirando com **ponte minimalista** (sem símbolo do infinito), apaga-se aos poucos.
+- Sem dependências externas: HTML + CSS + JS puros.

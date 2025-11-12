@@ -1,26 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Travessia — A Obra</title>
-  <meta name="description" content="A Obra — o lugar da entrega."/>
-  <link rel="stylesheet" href="assets/style.css"/>
-  <script defer src="assets/config.js"></script>
-  <script defer src="assets/obra.js"></script>
+<meta charset="utf-8">
+<title>A Obra — Entrego em confiança</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+function enviarObra(e){
+  e.preventDefault();
+  const texto = document.getElementById('obra-texto').value || '';
+  const mail = (window.OBRA_EMAIL || 'romuloloesch@gmail.com');
+  const assunto = encodeURIComponent('Travessia — Entrego em confiança');
+  const corpo = encodeURIComponent(texto.trim());
+  window.location.href = `mailto:${mail}?subject=${assunto}&body=${corpo}`;
+  setTimeout(()=>{ window.location.href = 'silencio.html'; }, 400);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const f=document.getElementById('obra-form');
+  f.addEventListener('submit',enviarObra);
+  document.getElementById('obra-texto').addEventListener('keydown',function(ev){
+    if((ev.ctrlKey||ev.metaKey) && ev.key==='Enter'){f.requestSubmit();}
+  });
+});
+</script>
 </head>
-<body class="page">
-  <div class="wrap">
-    <header class="brand"><span class="dot" aria-hidden="true"></span><span>travessia</span></header>
-    <section class="paper" aria-label="A Obra — o lugar da entrega">
+<body>
+  <div class="container">
+    <div class="card">
       <h1>A Obra</h1>
-      <p class="lead">Aqui você fala — com suas palavras.</p>
-      <textarea class="field" id="obra-texto" placeholder="Conte-me, com suas palavras..." aria-label="Campo livre para escrever a sua entrega"></textarea>
-      <div class="bar">
-        <span class="hint">Ctrl+Enter envia • sem formulários, sem ruído</span>
-        <button id="btn-entrego" class="btn">Entrego em confiança.</button>
-      </div>
-    </section>
+      <h2>Conte-me, com suas palavras…</h2>
+      <form id="obra-form" class="form">
+        <textarea id="obra-texto" placeholder="Conte-me, com suas palavras..."></textarea>
+        <div class="actions">
+          <button class="btn gold" type="submit">Entrego em confiança.</button>
+          <span class="small">Atalho: Ctrl + Enter</span>
+        </div>
+      </form>
+      <p class="small">Nada de formulário tradicional. Apenas gesto e presença.</p>
+    </div>
+    <div class="footer">© Loesch & Oráculo — 2025</div>
   </div>
 </body>
 </html>
