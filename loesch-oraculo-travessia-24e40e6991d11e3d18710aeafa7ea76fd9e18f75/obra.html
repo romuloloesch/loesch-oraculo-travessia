@@ -1,0 +1,36 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>A Obra — Entrego em confiança</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+function enviarObra(e){
+  e.preventDefault();
+  const texto = document.getElementById('obra-texto').value || '';
+  const mail = (window.OBRA_EMAIL || 'romuloloesch@gmail.com');
+  const assunto = encodeURIComponent('Travessia — Entrego em confiança');
+  const corpo = encodeURIComponent(texto.trim());
+  try{ window.open(`mailto:${mail}?subject=${assunto}&body=${corpo}`, '_blank', 'popup,width=640,height=520'); }catch(e){}
+  window.location.href = 'silencio.html';
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const f=document.getElementById('obra-form'); if(f){ f.addEventListener('submit',enviarObra); }
+  const a=document.getElementById('obra-texto'); if(a){ a.addEventListener('keydown',ev=>{
+    if((ev.ctrlKey||ev.metaKey)&&ev.key==='Enter'){ev.preventDefault(); enviarObra(ev);}});
+  }
+});
+</script></head><body>
+<div class="container"><div class="card">
+  <h1>A Obra</h1>
+  <h2>Agora que chegou, respire um instante.</h2>
+  <p>O que vem a seguir não é uma tarefa — é um gesto.</p>
+  <p>Queremos entender <strong>onde você está</strong> na sua travessia.<br>
+     O que tem te movido, o que tem te cansado, o que ainda te mantém de pé.</p>
+  <p>Escreva com liberdade. Com a mesma honestidade com que se fala com quem escuta de verdade.</p>
+  <form id="obra-form">
+    <textarea id="obra-texto" placeholder="Conte-me, com suas palavras..."></textarea>
+    <div class="actions">
+      <button class="btn" type="submit">Entrego em confiança.</button>
+      <span class="small">Atalho: Ctrl + Enter</span>
+    </div>
+  </form>
+  <p class="small"><strong>Nada aqui será julgado.</strong> O que é dito, é cuidado.</p>
+</div><div class="footer">© 2025 Loesch & Oráculo</div></div></body></html>

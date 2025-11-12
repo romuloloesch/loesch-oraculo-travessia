@@ -1,0 +1,43 @@
+
+:root{
+  --bg:#0d0e11;--panel:#14151a;--ink:#ece7de;--muted:#bdb6ad;--gold:#d7b571;--line:rgba(255,255,255,.08);
+  --radius:18px;--shadow:0 12px 34px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:#0d0e11;color:var(--ink);font:16px/1.7 ui-serif, Georgia, "Times New Roman", serif;letter-spacing:.2px}
+a{text-decoration:none;color:var(--ink)}
+.container{max-width:880px;margin:70px auto;padding:0 22px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+.center{text-align:center}
+h1{font-size:34px;margin:.2em 0 .8em 0;font-weight:600}
+h2{color:var(--muted);font-size:18px;margin:.3em 0 1.2em}
+p{margin:.7em 0}
+.btn{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:999px;border:1px solid rgba(215,181,113,.6);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));transition:transform .08s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.small{color:var(--muted);font-size:14px}
+.footer{opacity:.75;margin-top:46px;text-align:center;font-size:14px}
+
+.hero{display:grid;place-items:center;min-height:78vh}
+.hero .box{max-width:620px}
+.hero h1{letter-spacing:.4px}
+.glyph{font-size:22px;color:var(--gold);}
+
+textarea{width:100%;min-height:42vh;resize:vertical;background:#0f1116;color:var(--ink);
+  border:1px solid var(--line);border-radius:14px;padding:16px;font:16px/1.7 ui-serif, Georgia, serif;outline:none}
+.actions{display:flex;gap:12px;align-items:center;margin-top:16px}
+
+/* Silêncio */
+.silencio{min-height:76vh;display:grid;place-items:center}
+.seal{width:150px;height:150px;border-radius:50%;position:relative;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 50%, rgba(215,181,113,.18), rgba(215,181,113,0) 60%),
+             radial-gradient(circle at 50% 50%, rgba(255,255,255,.05), rgba(255,255,255,0) 72%);
+  box-shadow:0 0 0 1px rgba(215,181,113,.22), inset 0 0 40px rgba(215,181,113,.08);animation:breathe 3.2s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.bridge{width:90px;height:56px}
+.bridge path{fill:none;stroke:#d7b571;stroke-width:2.2;stroke-linecap:round;opacity:.92}
+.bridge .p{stroke-width:2.6}
+.fadeout{animation:fadeout 8s 1 1.6s forwards}@keyframes fadeout{to{opacity:0}}
+.back{margin-top:18px;opacity:.8}
