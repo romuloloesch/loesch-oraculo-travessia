@@ -1,0 +1,10 @@
+{
+  "name": "site-oraculo",
+  "private": true,
+  "scripts": {
+    "dev": "serve -s -l 3000 ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}
